@@ -24,7 +24,7 @@ spotless {
         ).config(
             mapOf(
                 "parser" to "java",
-                "tabwidth" to 4
+                "tabWidth" to 4
             )
         )
         licenseHeaderFile(rootProject.file("LICENSE_HEADER"))
