@@ -3,9 +3,9 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     java
-    kotlin("jvm") version "1.4.10"
-    id("com.diffplug.spotless") version "5.8.2"
-    id("kr.entree.spigradle") version "2.2.3"
+    kotlin("jvm") version "1.7.0"
+    id("com.diffplug.spotless") version "6.8.0"
+    id("kr.entree.spigradle") version "2.4.2"
 }
 
 group = "com.dumbdogdiner"
@@ -14,7 +14,6 @@ version = "1.0.0"
 allprojects {
     // Declare global repositories
     repositories {
-        jcenter()
         mavenCentral()
 
         // Add paper repository here, as it's used in both API and Bukkit modules.
@@ -22,6 +21,7 @@ allprojects {
     }
 }
 
+@Suppress("UnstableApiUsage")
 subprojects {
     group = "com.dumbdogdiner.myawesomeplugin"
 
@@ -36,17 +36,16 @@ subprojects {
     }
 
     repositories {
-        jcenter()
         mavenCentral()
     }
 
     tasks.withType<JavaCompile> {
-        targetCompatibility = JavaVersion.VERSION_11.toString()
-        sourceCompatibility = JavaVersion.VERSION_11.toString()
+        targetCompatibility = JavaVersion.VERSION_17.toString()
+        sourceCompatibility = JavaVersion.VERSION_17.toString()
     }
 
     tasks.withType<KotlinCompile> {
-        kotlinOptions.jvmTarget = JavaVersion.VERSION_11.toString()
+        kotlinOptions.jvmTarget = JavaVersion.VERSION_17.toString()
     }
 }
 
