@@ -10,7 +10,7 @@ version = "1.0.0"
 
 dependencies {
     compileOnly(paper())
-    implementation("org.jetbrains:annotations:16.0.2")
+    implementation("org.jetbrains:annotations:23.0.0")
 }
 
 spotless {
@@ -18,8 +18,8 @@ spotless {
         importOrder()
         prettier(
             mapOf(
-                "prettier" to "2.0.5",
-                "prettier-plugin-java" to "0.8.0"
+                "prettier" to "2.7.1",
+                "prettier-plugin-java" to "1.6.2"
             )
         ).config(
             mapOf(

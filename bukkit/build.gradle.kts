@@ -42,7 +42,8 @@ tasks {
     spigot {
         name = "myawesomeplugin"
         authors = mutableListOf("Some soft boy <3")
-        apiVersion = "1.16"
+        apiVersion = "1.19"
         softDepends = mutableListOf()
+        excludeLibraries = listOf("*")
     }
 }
